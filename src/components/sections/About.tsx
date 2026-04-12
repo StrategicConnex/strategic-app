@@ -1,0 +1,26 @@
+"use client";
+import React from "react";
+import { FadeUp } from "../ui/FadeUp";
+
+export function About() {
+  return (
+    <section id="about">
+      <div className="about-grid">
+        <FadeUp>
+          <span className="section-label">▸ Acerca de nosotros</span>
+          <h2 className="section-title">Consultora de Posicionamiento y Gestión Comercial</h2>
+          <div className="divider"></div>
+          <p className="section-desc">Strategic Connex opera en la intersección entre la estrategia corporativa y la ejecución técnica. Brindamos control, precisión y visión a empresas que compiten en mercados complejos y exigentes.</p>
+          <div className="about-pillars">
+            <div className="pillar"><div className="pillar-icon">🎯</div><div className="pillar-text"><strong>Precisión Estratégica</strong><span>Decisiones basadas en datos e inteligencia de mercado</span></div></div>
+            <div className="pillar"><div className="pillar-icon">⚙️</div><div className="pillar-text"><strong>Control Operativo</strong><span>Documentación técnica y gestión comercial integrada</span></div></div>
+            <div className="pillar"><div className="pillar-icon">📈</div><div className="pillar-text"><strong>Crecimiento Medible</strong><span>KPIs claros, reportes continuos y mejora progresiva</span></div></div>
+          </div>
+        </FadeUp>
+        <FadeUp delay={0.2} className="about-visual" aria-hidden={true}>
+          <video src="/images/nosotros.mp4" className="about-video" autoPlay loop muted playsInline aria-label="Video Corporativo" preload="metadata" poster="/logo.png"></video>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}
