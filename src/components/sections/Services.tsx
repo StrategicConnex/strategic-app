@@ -23,7 +23,7 @@ export function Services() {
         <span className="section-label">▸ Servicios</span>
         <h2 className="section-title">La única Suite Integral de Soluciones para el Sector Energético en Neuquén</h2>
         <div className="divider"></div>
-        <p className="section-desc">Cada solución está diseñada para generar impacto real en su posicionamiento, visibilidad y rentabilidad comercial.</p>
+        <p className="section-desc">Strategic Connex ofrece la única suite de servicios en la Cuenca Neuquina que resuelve, en un solo lugar, las necesidades críticas de comunicación y operación de las Pymes industriales.</p>
       </FadeUp>
       <div className="services-grid">
         {servicios.map((srv, i) => (
