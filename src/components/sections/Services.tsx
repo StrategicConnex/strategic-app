@@ -21,7 +21,7 @@ export function Services() {
     <section id="services">
       <FadeUp className="services-header">
         <span className="section-label">▸ Servicios</span>
-        <h2 className="section-title">Suite Completa de Servicios Estratégicos</h2>
+        <h2 className="section-title">La única Suite Integral de Soluciones para el Sector Energético en Neuquén</h2>
         <div className="divider"></div>
         <p className="section-desc">Cada solución está diseñada para generar impacto real en su posicionamiento, visibilidad y rentabilidad comercial.</p>
       </FadeUp>
