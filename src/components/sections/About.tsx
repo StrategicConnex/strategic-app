@@ -8,7 +8,7 @@ export function About() {
       <div className="about-grid">
         <FadeUp>
           <span className="section-label">▸ Acerca de nosotros</span>
-          <h2 className="section-title">Consultora de Posicionamiento y Gestión Comercial</h2>
+          <h2 className="section-title">La Primera Consultora de Posicionamiento y Gestión Comercial Integral de Neuquén</h2>
           <div className="divider"></div>
           <p className="section-desc">Strategic Connex opera en la intersección entre la estrategia corporativa y la ejecución técnica. Brindamos control, precisión y visión a empresas que compiten en mercados complejos y exigentes.</p>
           <div className="about-pillars">

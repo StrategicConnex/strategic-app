@@ -10,7 +10,7 @@ export function Footer() {
             <Image src="/logo.png" alt="Strategic Connex Logo" width={200} height={80} style={{ width: 'auto', height: '58px', objectFit: 'contain' }} className="logo-img" />
             <span className="logo-text">STRATEGIC <span className="logo-light">CONNEX</span></span>
           </a>
-          <p>Consultora de posicionamiento y gestión comercial especializada en industrias de alta complejidad. Precisión, control y resultados medibles.</p>
+          <p>La Primera Consultora de Posicionamiento y Gestión Comercial Integral de Neuquén, especializada en industrias de alta complejidad. Precisión, control y resultados medibles.</p>
         </div>
         <div className="footer-col">
           <h4>Servicios</h4>
