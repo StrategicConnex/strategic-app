@@ -52,7 +52,7 @@ export function CTA({ onEnter, onLeave }) {
           <p>Transformamos su posicionamiento comercial y documentación técnica en activos corporativos de alto rendimiento.</p>
           <div className="cta-info">
             <div className="cta-info-item"><span className="cta-icon">✉</span> contacto@strategicconnex.com</div>
-            <div className="cta-info-item"><span className="cta-icon">📍</span> Operaciones Globales</div>
+            <div className="cta-info-item"><span className="cta-icon">📍</span> Operaciones en Neuquén Capital y soporte técnico para bases en Añelo.</div>
           </div>
         </FadeUp>
         <FadeUp className="cta-form-container" delay={0.2} style={{ position: "relative" }}>
