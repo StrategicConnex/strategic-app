@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { FadeUp } from "../ui/FadeUp";
+import { HoverImage3D } from "../ui/HoverImage3D";
 
 export function Industries({ onEnter, onLeave }) {
   return (
@@ -18,7 +19,7 @@ export function Industries({ onEnter, onLeave }) {
         <div className="industry-cards">
           <FadeUp delay={0.1} className="ind-card" onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <div className="ind-card-bg" aria-hidden={true}>
-              <Image src="/images/industry_oil_gas.png" alt="Oil and Gas" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="ind-img" />
+              <HoverImage3D src="/images/industry_oil_gas.png" className="ind-img" />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">
@@ -29,7 +30,7 @@ export function Industries({ onEnter, onLeave }) {
           </FadeUp>
           <FadeUp delay={0.2} className="ind-card" onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <div className="ind-card-bg" aria-hidden={true}>
-              <Image src="/images/industry_energy.png" alt="Energía" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="ind-img" />
+              <HoverImage3D src="/images/industry_energy.png" className="ind-img" />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">
@@ -40,7 +41,7 @@ export function Industries({ onEnter, onLeave }) {
           </FadeUp>
           <FadeUp delay={0.3} className="ind-card" onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <div className="ind-card-bg" aria-hidden={true}>
-              <Image src="/images/industry_infra.png" alt="Infraestructura" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="ind-img" />
+              <HoverImage3D src="/images/industry_infra.png" className="ind-img" />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">
