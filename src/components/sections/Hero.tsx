@@ -2,7 +2,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Counter } from "../ui/Counter";
-import { HeroBackground3D } from "../ui/HeroBackground3D";
 
 interface HeroProps {
   onEnter: () => void;
@@ -19,7 +18,6 @@ export function Hero({ onEnter, onLeave }: HeroProps) {
         <div className="hero-grid"></div>
         <div className="hero-glow"></div>
         <div className="hero-glow2"></div>
-        <HeroBackground3D />
       </motion.div>
       <div className="hero-content">
         <div className="hero-badge">🔶 PLATAFORMA DE INTELIGENCIA COMERCIAL</div>

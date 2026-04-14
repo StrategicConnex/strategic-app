@@ -61,9 +61,9 @@ const ParticleSwarm = () => {
   );
 };
 
-export function HeroBackground3D({ className = "" }: { className?: string }) {
+export function GlobalBackground3D({ className = "" }: { className?: string }) {
   return (
-    <div className={className} style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex: 0, pointerEvents: "none" }}>
+    <div className={className} style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0, zIndex: -1, pointerEvents: "none" }}>
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <ParticleSwarm />
       </Canvas>
