@@ -14,6 +14,7 @@ import { Industries } from "@/components/sections/Industries";
 import { KPI } from "@/components/sections/KPI";
 import { Dashboard } from "@/components/sections/Dashboard";
 import { CTA } from "@/components/sections/CTA";
+import { EnergyTrails3D } from "@/components/ui/EnergyTrails3D";
 
 export default function Page() {
   const [isHovering, setIsHovering] = useState(false);
@@ -23,6 +24,11 @@ export default function Page() {
 
   return (
     <>
+      <div className="global-page-bg" aria-hidden={true}>
+        <div className="hero-grid"></div>
+        <div className="hero-glow"></div>
+        <EnergyTrails3D />
+      </div>
       <Navbar onEnter={handleInteractEnter} onLeave={handleInteractLeave} />
       <main>
         <Hero onEnter={handleInteractEnter} onLeave={handleInteractLeave} />

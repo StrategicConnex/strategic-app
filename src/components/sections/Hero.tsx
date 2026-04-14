@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Counter } from "../ui/Counter";
-import { EnergyTrails3D } from "../ui/EnergyTrails3D";
 
 interface HeroProps {
   onEnter: () => void;
@@ -10,16 +9,9 @@ interface HeroProps {
 }
 
 export function Hero({ onEnter, onLeave }: HeroProps) {
-  const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 1000], [0, 350]);
 
   return (
     <section id="hero">
-      <motion.div className="hero-bg" aria-hidden={true} style={{ y: heroY }}>
-        <div className="hero-grid"></div>
-        <div className="hero-glow"></div>
-        <EnergyTrails3D />
-      </motion.div>
       <div className="hero-content">
         <div className="hero-badge"><span style={{color: '#f05252', fontSize: '10px'}}>♦</span> PLATAFORMA DE INTELIGENCIA COMERCIAL</div>
         <h1 className="hero-title" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.1rem)', lineHeight: '1.15' }}>
