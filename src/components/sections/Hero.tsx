@@ -20,7 +20,7 @@ export function Hero({ onEnter, onLeave }: HeroProps) {
       </motion.div>
       <div className="hero-content">
         <div className="hero-badge"><span style={{color: '#f05252', fontSize: '10px'}}>♦</span> PLATAFORMA DE INTELIGENCIA COMERCIAL</div>
-        <h1 className="hero-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: '1.05' }}>
+        <h1 className="hero-title" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.1rem)', lineHeight: '1.15' }}>
           Control Documental y
           <span className="accent">Estrategia Comercial</span>
           para el ecosistema<br />
