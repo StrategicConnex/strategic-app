@@ -22,7 +22,7 @@ export function About() {
           <ImageSequence 
             folder="/Iframe"
             prefix="nosotros_"
-            frameCount={80}
+            frameCount={300}
             extension="jpg"
             fps={24}
           />
