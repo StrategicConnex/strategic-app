@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Counter } from "../ui/Counter";
+import { heroMetrics } from "@/constants/metrics";
 
 interface HeroProps {
   onEnter: () => void;
@@ -27,9 +28,14 @@ export function Hero({ onEnter, onLeave }: HeroProps) {
           <a href="#about" className="btn-outline" onMouseEnter={onEnter} onMouseLeave={onLeave}>Conocer el modelo →</a>
         </div>
         <div className="hero-stats">
-          <div className="stat-item"><div className="stat-num">+<Counter to={120} /></div><div className="stat-label">Proyectos Ejecutados</div></div>
-          <div className="stat-item"><div className="stat-num"><Counter to={98} />%</div><div className="stat-label">Satisfacción de Clientes</div></div>
-          <div className="stat-item"><div className="stat-num"><Counter to={15} />+</div><div className="stat-label">Años en el Sector</div></div>
+          {heroMetrics.map((metric) => (
+            <div key={metric.id} className="stat-item">
+              <div className="stat-num">
+                {metric.prefix}<Counter to={metric.value} />{metric.suffix}
+              </div>
+              <div className="stat-label">{metric.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

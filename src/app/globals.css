@@ -163,9 +163,9 @@ h2.section-title{font-family:var(--font-montserrat), sans-serif;font-size:clamp(
 .dash-sidebar{background:#1a1d22;border-right:1px solid rgba(255,255,255,.07);padding:1.5rem 1rem}
 .dash-logo{font-family:var(--font-montserrat), sans-serif;font-weight:800;font-size:.9rem;color:var(--gold);padding:.75rem .75rem 1.5rem;letter-spacing:.04em}
 .dash-nav{list-style:none;display:flex;flex-direction:column;gap:.25rem}
-.dash-nav li a{display:flex;align-items:center;gap:.75rem;padding:.65rem .75rem;border-radius:8px;font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:all .2s}
-.dash-nav li.active a,.dash-nav li a:hover{background:rgba(212,175,55,.1);color:var(--gold)}
-.dash-nav li.active a{border-left:2px solid var(--gold);padding-left:calc(.75rem - 2px)}
+.dash-nav li button{display:flex;align-items:center;gap:.75rem;padding:.65rem .75rem;border-radius:8px;font-size:.8rem;color:var(--text-muted);transition:all .2s;background:transparent;border:none;width:100%;text-align:left;font-family:inherit;cursor:pointer}
+.dash-nav li.active button,.dash-nav li button:hover{background:rgba(212,175,55,.1);color:var(--gold)}
+.dash-nav li.active button{border-left:2px solid var(--gold);padding-left:calc(.75rem - 2px)}
 .dash-main{padding:1.5rem;display:flex;flex-direction:column;gap:1.25rem}
 .dash-topbar{display:flex;justify-content:space-between;align-items:center}
 .dash-topbar h4{font-family:var(--font-montserrat), sans-serif;font-size:.95rem;font-weight:700;color:var(--text)}

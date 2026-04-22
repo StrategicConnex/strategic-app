@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
@@ -14,8 +15,11 @@ import { Industries } from "@/components/sections/Industries";
 import { KPI } from "@/components/sections/KPI";
 import { Dashboard } from "@/components/sections/Dashboard";
 import { CTA } from "@/components/sections/CTA";
-import { EnergyTrails3D } from "@/components/ui/EnergyTrails3D";
 
+const EnergyTrails3D = dynamic(
+  () => import("@/components/ui/EnergyTrails3D").then((mod) => mod.EnergyTrails3D),
+  { ssr: false }
+);
 export default function Page() {
   const [isHovering, setIsHovering] = useState(false);
 
