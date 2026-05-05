@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     // Manejo específico de errores de validación
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: 'Datos de formulario inválidos', details: error.errors.map(e => e.message) },
+        { error: 'Datos de formulario inválidos', details: error.issues.map(e => e.message) },
         { status: 400 }
       );
     }
