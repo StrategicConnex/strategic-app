@@ -51,8 +51,57 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Strategic Connex",
+    "description": "Consultora Industrial especializada en Marketing Digital B2B, Control Documental de Hidrocarburos y Soluciones IT para Vaca Muerta.",
+    "url": "https://strategicconnex.com",
+    "logo": "https://strategicconnex.com/logo.png",
+    "image": "https://strategicconnex.com/images/marketing_digital_1775961023662.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Neuquén",
+      "addressRegion": "Neuquén",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -38.9516,
+      "longitude": -68.0591
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios Industriales",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Marketing Digital Industrial B2B",
+            "description": "Posicionamiento estratégico y generación de demanda para empresas del sector energético."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Control Documental de Hidrocarburos",
+            "description": "Gestión técnica de documentación y homologación para operadoras y proveedores de Vaca Muerta."
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
