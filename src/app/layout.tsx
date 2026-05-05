@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://strategicconnex.vercel.app"),
-  title: "Strategic Connex | Consultora Industrial Neuquén - Vaca Muerta",
+  title: "Strategic Connex | Consultora Industrial en Vaca Muerta",
   description: "La única Consultora Industrial en Neuquén que fusiona Marketing, Control Documental Hidrocarburos e IT. Liderazgo B2B en Vaca Muerta.",
   keywords: ["Consultora Industrial Neuquén", "Vaca Muerta", "Control Documental Hidrocarburos", "Oil and Gas", "Marketing B2B"],
   robots: "index, follow",
@@ -64,6 +64,15 @@ export default function RootLayout({
       "addressLocality": "Neuquén",
       "addressRegion": "Neuquén",
       "addressCountry": "AR"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": -38.9516,
+        "longitude": -68.0591
+      },
+      "geoRadius": "500000"
     },
     "geo": {
       "@type": "GeoCoordinates",
