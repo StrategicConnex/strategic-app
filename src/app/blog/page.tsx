@@ -32,11 +32,6 @@ import {
 import { CTA } from "@/components/sections/CTA";
 import { motion, AnimatePresence } from "framer-motion";
 
-const EnergyTrails3D = dynamic(
-  () => import("@/components/ui/EnergyTrails3D").then((mod) => mod.EnergyTrails3D),
-  { ssr: false }
-);
-
 interface ErrorData {
   id: string;
   num: string;
@@ -259,7 +254,6 @@ export default function BlogPage() {
       <div className="global-page-bg" aria-hidden={true}>
         <div className="hero-grid"></div>
         <div className="hero-glow"></div>
-        <EnergyTrails3D />
       </div>
       <Navbar />
 
