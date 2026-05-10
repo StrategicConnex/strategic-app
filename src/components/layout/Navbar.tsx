@@ -17,7 +17,7 @@ export function Navbar() {
           onMouseEnter={() => setHovering(true)} 
           onMouseLeave={() => setHovering(false)}
         >
-          <Image src="/logo.png" alt="Strategic Connex Logo" width={200} height={80} style={{ width: 'auto', height: '58px', objectFit: 'contain' }} className="logo-img" />
+          <Image src="/logo.webp" alt="Logo de Strategic Connex - Consultoría SEO y Posicionamiento en Buscadores" width={200} height={80} style={{ width: 'auto', height: '58px', objectFit: 'contain' }} className="logo-img" priority />
           <span className="logo-text">STRATEGIC <span className="logo-light">CONNEX</span></span>
         </Link>
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>

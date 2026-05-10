@@ -21,8 +21,50 @@ const EnergyTrails3D = dynamic(
   { ssr: false }
 );
 export default function Page() {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "StrategicConnex",
+    "url": "https://www.strategicconnex.com.ar",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.strategicconnex.com.ar/blog?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StrategicConnex",
+    "url": "https://www.strategicconnex.com.ar",
+    "logo": "https://www.strategicconnex.com.ar/logo.png",
+    "image": "https://www.strategicconnex.com.ar/images/marketing_digital_1775961023662.png",
+    "description": "Agencia SEO especializada en posicionamiento web, auditorías técnicas de SEO y estrategias de contenido orientadas a resultados corporativos.",
+    "email": "contacto@strategicconnex.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/strategicconnex"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contacto@strategicconnex.com",
+      "contactType": "customer support"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <div className="global-page-bg" aria-hidden={true}>
         <div className="hero-grid"></div>
         <div className="hero-glow"></div>

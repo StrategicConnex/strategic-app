@@ -7,7 +7,7 @@ export function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <a href="#" className="logo">
-            <Image src="/logo.png" alt="Strategic Connex Logo" width={200} height={80} style={{ width: 'auto', height: '58px', objectFit: 'contain' }} className="logo-img" />
+            <Image src="/logo.webp" alt="Logo de Strategic Connex - Consultoría SEO y Posicionamiento en Buscadores" width={200} height={80} style={{ width: 'auto', height: '58px', objectFit: 'contain' }} className="logo-img" loading="lazy" />
             <span className="logo-text">STRATEGIC <span className="logo-light">CONNEX</span></span>
           </a>
           <p>Agencia especializada en posicionamiento web estratégico y crecimiento orgánico. Optimizamos la visibilidad de empresas mediante SEO técnico de alta precisión y estrategias de contenido orientadas a resultados.</p>

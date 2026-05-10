@@ -5,8 +5,6 @@ import { FadeUp } from "../ui/FadeUp";
 import { SERVICIOS_DATA } from "../../constants/data";
 
 export function Services() {
-
-
   return (
     <section id="services" style={{ position: "relative", overflow: "hidden" }}>
       <FadeUp className="services-header" style={{ position: "relative", zIndex: 1 }}>
@@ -19,7 +17,14 @@ export function Services() {
         {SERVICIOS_DATA.map((srv, i) => (
           <FadeUp key={i} className="service-card" delay={0.05 * i}>
             <div className="service-img" style={{ position: "relative" }}>
-              <Image src={`/images/${srv.img}`} alt={srv.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 400px" />
+              <Image 
+                src={`/images/${srv.img}`} 
+                alt={srv.alt} 
+                fill 
+                className="object-cover" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+              />
             </div>
             <div className="service-content">
               <h3>{srv.title}</h3>

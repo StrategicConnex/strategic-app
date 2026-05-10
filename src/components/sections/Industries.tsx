@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { FadeUp } from "../ui/FadeUp";
 import { HoverImage3D } from "../ui/HoverImage3D";
 import { useCursorStore } from "@/lib/store/useCursorStore";
@@ -26,8 +25,12 @@ export function Industries() {
             onMouseEnter={() => setHovering(true)} 
             onMouseLeave={() => setHovering(false)}
           >
-            <div className="ind-card-bg" aria-hidden={true}>
-              <HoverImage3D src="/images/industry_oil_gas.png" className="ind-img" />
+            <div className="ind-card-bg">
+              <HoverImage3D 
+                src="/images/industry_oil_gas.webp" 
+                alt="Operaciones de exploración de petróleo y gas natural en Vaca Muerta, Añelo" 
+                className="ind-img" 
+              />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">
@@ -42,8 +45,12 @@ export function Industries() {
             onMouseEnter={() => setHovering(true)} 
             onMouseLeave={() => setHovering(false)}
           >
-            <div className="ind-card-bg" aria-hidden={true}>
-              <HoverImage3D src="/images/industry_energy.png" className="ind-img" />
+            <div className="ind-card-bg">
+              <HoverImage3D 
+                src="/images/industry_energy.webp" 
+                alt="Infraestructura de distribución eléctrica industrial y utilities para empresas en Neuquén" 
+                className="ind-img" 
+              />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">
@@ -58,8 +65,12 @@ export function Industries() {
             onMouseEnter={() => setHovering(true)} 
             onMouseLeave={() => setHovering(false)}
           >
-            <div className="ind-card-bg" aria-hidden={true}>
-              <HoverImage3D src="/images/industry_infra.png" className="ind-img" />
+            <div className="ind-card-bg">
+              <HoverImage3D 
+                src="/images/industry_infra.webp" 
+                alt="Maquinaria vial y obras de infraestructura civil e ingeniería en yacimientos de la Cuenca Neuquina" 
+                className="ind-img" 
+              />
             </div>
             <div className="ind-card-overlay"></div>
             <div className="ind-card-content">

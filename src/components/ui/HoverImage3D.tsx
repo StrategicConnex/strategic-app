@@ -3,6 +3,7 @@ import React, { useRef, useState, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
+import Image from "next/image";
 
 const vertexShader = `
   varying vec2 vUv;
@@ -62,7 +63,6 @@ const Scene = ({ src }: { src: string }) => {
   useEffect(() => {
     return () => {
       geometry.dispose();
-      // material and textures are handled by suspense/r3f but manual is safer for custom shaders
       if (materialRef.current) materialRef.current.dispose();
     };
   }, [geometry]);
@@ -110,18 +110,58 @@ const Scene = ({ src }: { src: string }) => {
   );
 };
 
-export function HoverImage3D({ src, className = "" }: { src: string, className?: string }) {
+export function HoverImage3D({ src, alt = "", className = "" }: { src: string, alt?: string, className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // Maintain active state once visible to avoid flashing
+        }
+      },
+      { 
+        rootMargin: "150px" // Start pre-booting WebGL 150px before entering viewport
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={className} style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden" }}>
-      <Canvas
-        orthographic
-        camera={{ position: [0, 0, 1], zoom: 1 }}
-        style={{ width: "100%", height: "100%", outline: "none", pointerEvents: "auto" }}
-      >
-        <React.Suspense fallback={null}>
-          <Scene src={src} />
-        </React.Suspense>
-      </Canvas>
+    <div 
+      ref={containerRef} 
+      className={className} 
+      style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden" }}
+    >
+      {!inView ? (
+        // Static optimized Next.js Image for immediate SEO indexing and LCP/layout stability
+        <Image 
+          src={src} 
+          alt={alt} 
+          fill 
+          className="object-cover" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading="lazy"
+        />
+      ) : (
+        // 3D Interactive WebGL Canvas mounts dynamically when in viewport
+        <Canvas
+          orthographic
+          camera={{ position: [0, 0, 1], zoom: 1 }}
+          style={{ width: "100%", height: "100%", outline: "none", pointerEvents: "auto" }}
+        >
+          <React.Suspense fallback={null}>
+            <Scene src={src} />
+          </React.Suspense>
+        </Canvas>
+      )}
     </div>
   );
 }

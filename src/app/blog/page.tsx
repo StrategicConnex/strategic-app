@@ -1,12 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { FloatingWP } from "@/components/layout/FloatingWP";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { 
   Calendar, 
   Clock, 
@@ -249,8 +251,51 @@ export default function BlogPage() {
     setTimeout(() => setShowToast(false), 3000);
   };
 
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Estrategias de SEO y Artículos Técnicos | StrategicConnex",
+    "description": "Explora análisis detallados sobre los errores comunes de SEO corporativo, optimización de rankings, inteligencia artificial en motores de búsqueda (SGE) y mejores prácticas para el posicionamiento orgánico en 2026.",
+    "url": "https://www.strategicconnex.com.ar/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "StrategicConnex",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.strategicconnex.com.ar/images/logo.png"
+      }
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.strategicconnex.com.ar"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.strategicconnex.com.ar/blog"
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="global-page-bg" aria-hidden={true}>
         <div className="hero-grid"></div>
         <div className="hero-glow"></div>
@@ -266,6 +311,9 @@ export default function BlogPage() {
       <main className="blog-magazine-section">
         {/* HERO SECTION */}
         <section id="intro" className="container mx-auto px-6">
+          <div className="flex justify-start max-w-4xl mx-auto mb-6">
+            <Breadcrumbs items={[{ name: "Blog" }]} />
+          </div>
           <div className="max-w-4xl mx-auto text-center">
             <FadeUp>
               <div className="blog-hero-meta">
@@ -334,10 +382,14 @@ export default function BlogPage() {
 
             {/* ART WORK COVER (HERO IMAGE) */}
             <FadeUp delay={0.2}>
-              <div className="blog-hero-cover">
-                <img 
-                  src="/images/seo_errors_hero.png" 
-                  alt="Errores SEO que destruyen tu ranking en 2026" 
+              <div className="blog-hero-cover relative overflow-hidden">
+                <Image 
+                  src="/images/seo_errors_hero.webp" 
+                  alt="Errores SEO críticos de Core Web Vitals, velocidad de carga LCP e indexación que destruyen tu ranking en buscadores" 
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1200px) 100vw, 1200px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
@@ -350,7 +402,6 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* MAGAZINE LAYOUT CONTAINER */}
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="blog-grid-layout">
             
