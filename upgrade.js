@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 let jsx = fs.readFileSync('C:/Users/Juan/OneDrive/Documentos/Antigravity/Strategic/strategic-app/src/app/page.tsx', 'utf8');
 

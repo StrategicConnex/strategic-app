@@ -15,10 +15,17 @@ const GeometricNetwork = () => {
         const p = new Float32Array(count * 3);
         const l = [];
         
+        // Pure deterministic seeded pseudo-random generator
+        let seed = 42;
+        const random = () => {
+            const x = Math.sin(seed++) * 10000;
+            return x - Math.floor(x);
+        };
+        
         for (let i = 0; i < count; i++) {
-            p[i*3] = (Math.random() - 0.5) * 25;
-            p[i*3+1] = (Math.random() - 0.5) * 25;
-            p[i*3+2] = (Math.random() - 0.5) * 25;
+            p[i*3] = (random() - 0.5) * 25;
+            p[i*3+1] = (random() - 0.5) * 25;
+            p[i*3+2] = (random() - 0.5) * 25;
         }
         
         for (let i = 0; i < count; i++) {
