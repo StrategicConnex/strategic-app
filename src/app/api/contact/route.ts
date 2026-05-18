@@ -16,6 +16,15 @@ export async function POST(req: Request) {
       );
     }
 
+    // Honeypot anti-spam check: if "website" field has any value, drop silently and return 200 OK (so bots think it succeeded)
+    if (body && body.website) {
+      console.warn("[SPAM_BOT_BLOCKED] Honeypot field filled by spam bot:", body.website);
+      return NextResponse.json(
+        { success: true, message: 'Correo enviado a los consultores con éxito' },
+        { status: 200 }
+      );
+    }
+
     // Validar datos con Zod
     const validatedData = contactSchema.parse(body);
 

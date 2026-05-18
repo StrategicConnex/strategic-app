@@ -15,7 +15,8 @@ export function CTA() {
       name: e.target.name.value,
       company: e.target.company.value,
       email: e.target.email.value,
-      message: e.target.message.value
+      message: e.target.message.value,
+      website: e.target.website.value
     };
 
     try {
@@ -59,11 +60,21 @@ export function CTA() {
         </FadeUp>
         <FadeUp className="cta-form-container" delay={0.2} style={{ position: "relative" }}>
           <form className="corporate-form" id="contactForm" autoComplete="off" onSubmit={handleForm}>
+            {/* Campo honeypot oculto anti-spam */}
+            <div style={{ display: 'none' }} aria-hidden="true">
+              <input 
+                type="text" 
+                name="website" 
+                tabIndex={-1} 
+                autoComplete="off" 
+              />
+            </div>
             <div className="form-row">
               <div className="form-group">
                 <input 
                   type="text" 
                   id="name" 
+                  name="name" 
                   required 
                   placeholder=" " 
                   minLength={3} 
@@ -77,6 +88,7 @@ export function CTA() {
                 <input 
                   type="text" 
                   id="company" 
+                  name="company" 
                   required 
                   placeholder=" " 
                   minLength={2} 
@@ -91,6 +103,7 @@ export function CTA() {
               <input 
                 type="email" 
                 id="email" 
+                name="email" 
                 required 
                 placeholder=" " 
                 pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$" 
@@ -103,6 +116,7 @@ export function CTA() {
             <div className="form-group">
               <textarea 
                 id="message" 
+                name="message" 
                 rows={3} 
                 required 
                 placeholder=" " 

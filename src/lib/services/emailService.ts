@@ -1,4 +1,4 @@
-import transporter from '../nodemailer';
+import getTransporter from '../nodemailer';
 import { ContactFormData } from '../validations/contact';
 
 const escapeHTML = (str: string) => str.replace(/[&<>"']/g, (m) => ({
@@ -35,5 +35,5 @@ export async function sendContactEmail(data: ContactFormData) {
     `,
   };
 
-  return transporter.sendMail(mailOptions);
+  return getTransporter().sendMail(mailOptions);
 }
