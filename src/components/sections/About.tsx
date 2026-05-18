@@ -25,9 +25,10 @@ export function About() {
             playsInline 
             className="about-video"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            preload="metadata"
+            poster="/logo.png"
           >
-            <source src="/Iframe/nosotros_video.webm" type="video/webm" />
-            <source src="/Iframe/nosotros_video.mp4" type="video/mp4" />
+            <source src="/images/strategic.webm" type="video/webm" />
           </video>
         </FadeUp>
       </div>

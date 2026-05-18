@@ -42,12 +42,7 @@ fs.writeFileSync(navPath, navContent, 'utf8');
 
 
 // 3. Update Video with Poster and Preload in About.tsx
-const aboutPath = 'C:/Users/Juan/OneDrive/Documentos/Antigravity/Strategic/strategic-app/src/components/sections/About.tsx';
-patchFile(
-  aboutPath,
-  '<video src="/images/nosotros.mp4" className="about-video" autoPlay loop muted playsInline aria-label="Video Corporativo"></video>',
-  '<video src="/images/nosotros.mp4" className="about-video" autoPlay loop muted playsInline aria-label="Video Corporativo" preload="metadata" poster="/logo.png"></video>'
-);
+// (The video strategic.webm is already correctly configured and optimized directly in About.tsx and generate_components.js)
 
 
 // 4. Transform Layout.tsx to include Corporate Metadata & OpenGraph
